@@ -15,14 +15,14 @@ const sharedProps = {
 const App: React.FC = () => {
   console.log(BaseTheme);
   return (
-    <StyleSheetManager target={document.head}>
+
       <ThemeProvider theme={BaseTheme}>
-        <div>
+        <>
           <H1>New Header</H1>
-          <Button variant="outline"  {...sharedProps}>Logout</Button>
-        </div>
+          <Button  name="button" title="title">Click me</Button>
+        </>
       </ThemeProvider>
-    </StyleSheetManager>
+
   );
 }
 
