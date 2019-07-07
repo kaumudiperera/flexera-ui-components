@@ -4,7 +4,7 @@ import './App.css';
 
 import { BaseTheme } from '@flexera/ui-react-components';
 import { ThemeProvider, StyleSheetManager } from 'styled-components';
-import { Button, H1 } from '@flexera/ui-react-components';
+import { Button, H1, Header, HeaderBrand, HeaderProduct, HeaderDivider, HeaderRight } from '@flexera/ui-react-components';
 
 
 const sharedProps = {
@@ -17,9 +17,15 @@ const App: React.FC = () => {
   return (
 
       <ThemeProvider theme={BaseTheme}>
+        
         <>
+        <Header fixed={false}>
+        <HeaderBrand  />
+        <HeaderDivider />
+        <HeaderProduct>ProductName</HeaderProduct>
+        </Header>
           <H1>New Header</H1>
-          <Button  name="button" title="title">Click me</Button>
+          <Button variant="primary"  name="button" title="title">Click me</Button>
         </>
       </ThemeProvider>
 
