@@ -4,18 +4,15 @@ import './App.css';
 
 import { BaseTheme } from '@flexera/ui-react-components';
 import { ThemeProvider, StyleSheetManager } from 'styled-components';
-import { Button, H1, Header, HeaderBrand, HeaderProduct, HeaderDivider, HeaderRight } from '@flexera/ui-react-components';
-
-
-const sharedProps = {
-  name: 'buttonName',
-  title: 'buttonTitle',
-  m: 'lg',
-};
+import { Button, H1, Header, HeaderBrand, HeaderProduct, HeaderDivider, Link } from '@flexera/ui-react-components';
+import { Grid } from './components/grid/Grid.component';
+const mystyles = {
+  margin: '2em'
+} as React.CSSProperties;
 const App: React.FC = () => {
   console.log(BaseTheme);
   return (
-
+    
       <ThemeProvider theme={BaseTheme}>
         
         <>
@@ -26,9 +23,12 @@ const App: React.FC = () => {
         </Header>
           <H1>New Header</H1>
           <Button variant="primary"  name="button" title="title">Click me</Button>
+          <Link href="http://localhost:3002/">Click me</Link>
+          <div style={mystyles}>
+          <Grid/>
+          </div>
         </>
       </ThemeProvider>
-
   );
 }
 
