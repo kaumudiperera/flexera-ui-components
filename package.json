@@ -1,7 +1,11 @@
 {
   "name": "flexera-ui-components",
   "version": "0.1.0",
-  "private": true,
+  "author": "Kaumudi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaumudiperera/flexera-ui-components"
+  },
   "dependencies": {
     "@flexera/ui-react-components": "^2.2.0",
     "@types/jest": "24.0.15",
@@ -30,6 +34,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/kaumudiperera"
   },
   "browserslist": {
     "production": [
