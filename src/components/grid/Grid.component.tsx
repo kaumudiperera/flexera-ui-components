@@ -2,10 +2,7 @@ import React from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
-import 'ag-grid-community/dist/styles/ag-theme-material.css';
-import 'ag-grid-community/dist/styles/ag-theme-fresh.css';
-import 'ag-grid-community/dist/styles/ag-theme-bootstrap.css';
-import { Link } from '@flexera/ui-react-components';
+import 'ag-grid-enterprise';
 import { TableLink } from './TableLink.Component';
 
 const Count = (param: any) => {
@@ -20,13 +17,13 @@ export const Grid: React.FC = () => {
 
     const data = {
         columnDefs: [{
-          headerName: "Make", field: "make", sortable: true, cellRendererFramework:  TableLink, cellRendererParams :{
+          headerName: "Make", field: "make", sortable: true,  suppressToolPanel: true, cellRendererFramework:  TableLink, cellRendererParams :{
             color: "#000"
           } 
         }, {
           headerName: "Model", field: "model", filter: true, cellRendererFramework:  Count,
         }, {
-          headerName: "Price", field: "price"
+          headerName: "Price", children: [{headerName: "price", field: "price", suppressToolPanel: true}, {headerName: "price1", field: "price"}, {headerName: "id", field: "id"}]
         }],
         autoGroupColumnDef: {
           headerName: "Price",
@@ -36,6 +33,35 @@ export const Grid: React.FC = () => {
             checkbox: true
           }
         },
+        sideBar:{toolPanels: [{
+          id: 'columns',
+          labelDefault: 'Columns',
+          labelKey: 'columns',
+          iconKey: 'columns',
+          toolPanel: 'agColumnsToolPanel',
+          toolPanelParams: {
+              suppressRowGroups: true,
+              suppressValues: true,
+              suppressPivots: true,
+              suppressPivotMode: true,
+              suppressSideButtons: true,
+              suppressColumnFilter: true,
+              suppressColumnSelectAll: true,
+              suppressColumnExpandAll: true
+          }
+      }],
+      defaultToolPanel: 'columns'},
+        defaultColDef: {
+          // allow every column to be aggregated
+          enableValue: true,
+          // allow every column to be grouped
+          enableRowGroup: true,
+          // allow every column to be pivoted
+          enablePivot: true,
+          sortable: true,
+          filter: true
+      },
+
         rowData: [{
           make: "Toyota", model: "Celica", price: 35000, id: 1
         }, {
@@ -53,11 +79,13 @@ export const Grid: React.FC = () => {
             className="ag-theme-balham"
             style={{ 
             height: '500px', 
-            width: '600px' }} 
+            width: '100%' }} 
           >
             <AgGridReact
              rowSelection="multiple"
               columnDefs={data.columnDefs}
+              sideBar={data.sideBar}
+              
               rowData={data.rowData}>
             </AgGridReact>
           </div>
