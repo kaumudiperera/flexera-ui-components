@@ -1,6 +1,6 @@
 {
   "name": "@kaumudiperera/flexera-ui-components",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": "Kaumudi",
   "repository": {
     "type": "git",
@@ -35,7 +35,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-
   "browserslist": {
     "production": [
       ">0.2%",
