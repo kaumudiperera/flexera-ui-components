@@ -1,16 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import { BaseTheme } from '@flexera/ui-react-components';
+import { RichGrid } from '@flexera/ag-grid-react';
+// import { BaseTheme } from '@flexera/ui-react-components';
 import { ThemeProvider, StyleSheetManager } from 'styled-components';
-import { Button, H1, Header, HeaderBrand, HeaderProduct, HeaderDivider, Link } from '@flexera/ui-react-components';
+// import { Button, H1, Header, HeaderBrand, HeaderProduct, HeaderDivider, Link } from '@flexera/ui-react-components';
 import { Grid } from './components/grid/Grid.component';
 const mystyles = {
   margin: '2em'
 } as React.CSSProperties;
 const App: React.FC = () => {
-  console.log(BaseTheme);
+  // console.log(BaseTheme);
 const download = () =>{
   let data = `<BeaconConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <BeaconServices>
@@ -46,23 +46,7 @@ document.body.removeChild(link);
 
   return (
     
-      <ThemeProvider theme={BaseTheme}>
-        
-        <>
-        <Header fixed={false}>
-        <HeaderBrand  />
-        <HeaderDivider />
-        <HeaderProduct>ProductName</HeaderProduct>
-        </Header>
-          <H1>New Header</H1>
-          <Button variant="primary"  name="button" title="title">Click me</Button>
-          <Link href="http://localhost:3002/">Click me</Link>
-          <Button name="Download" title="Download" onClick={()=>download()}>Download</Button>
-          <div style={mystyles}>
-          <Grid/>
-          </div>
-        </>
-      </ThemeProvider>
+      <RichGrid/>
   );
 }
 
