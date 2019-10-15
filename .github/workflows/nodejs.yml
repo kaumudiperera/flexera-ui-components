@@ -23,7 +23,8 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm run build --if-present
         npm test
+        npm version ${{GITHUB_ACTOR}}
+        npm publish --registry=https://npm.pkg.github.com
       env:
         CI: true
