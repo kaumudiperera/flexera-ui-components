@@ -27,7 +27,7 @@ jobs:
       run: |
         npm install
         npm --no-git-tag-version version ${GITHUB_REF##*/}
-        npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+        npm config set //npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN
         npm publish
       env:
         CI: true
