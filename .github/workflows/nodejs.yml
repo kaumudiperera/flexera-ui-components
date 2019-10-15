@@ -28,7 +28,7 @@ jobs:
         npm install
         npm --no-git-tag-version version ${GITHUB_REF##*/}
         npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-        npm run trypublish
+        npm publish
       env:
         CI: true
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
