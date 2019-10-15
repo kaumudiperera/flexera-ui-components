@@ -23,9 +23,6 @@ jobs:
     - name: echo github_ref
       shell: bash
       run: echo ${GITHUB_REF##*/}
-    - name: npm install, build, and test
-      run: |
-        npm install
     - name: publish
       run: |
         npm --no-git-tag-version version ${GITHUB_REF##*/}
