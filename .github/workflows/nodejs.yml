@@ -26,7 +26,7 @@ jobs:
     - name: publish
       run: |
         npm --no-git-tag-version version ${GITHUB_REF##*/}
-        npm adduser --registry=https://pm.pkg.github.com/ --scope=@kaumudiperera
+        npm adduser --registry=https://npm.pkg.github.com/ --scope=@kaumudiperera
         npm publish
       env:
         CI: true
