@@ -15,6 +15,7 @@ jobs:
           node-version: 12
       - run: npm install
       - run: npm run build
+      - run: npm --no-git-tag-version version ${GITHUB_REF##*/}
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
@@ -25,8 +26,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@kaumudiperera'
-      - run: |
-            npm --no-git-tag-version version ${GITHUB_REF##*/}
+      - run: 
             npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
