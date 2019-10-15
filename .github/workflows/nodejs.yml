@@ -20,6 +20,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        name: myDocker/repository
+        username: kaumudiperera
+        password: ${{ secrets.NPM_AUTH_TOKEN }}
+        email: kperera@flexera.com
+        registry: npm.pkg.github.com
     - name: echo github_ref
       shell: bash
       run: echo ${GITHUB_REF##*/}
@@ -27,7 +32,7 @@ jobs:
       run: |
         npm --no-git-tag-version version ${GITHUB_REF##*/}
         npm adduser --registry=https://npm.pkg.github.com/ --scope=@kaumudiperera
-        npm publish
+        npm publish --registry=https://npm.pkg.github.com/
       env:
         CI: true
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
