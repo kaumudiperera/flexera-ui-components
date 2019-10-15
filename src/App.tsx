@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { RichGrid } from '@flexera/ag-grid-react';
 // import { BaseTheme } from '@flexera/ui-react-components';
 import { ThemeProvider, StyleSheetManager } from 'styled-components';
 // import { Button, H1, Header, HeaderBrand, HeaderProduct, HeaderDivider, Link } from '@flexera/ui-react-components';
@@ -46,7 +45,7 @@ document.body.removeChild(link);
 
   return (
     
-      <RichGrid/>
+<div></div>
   );
 }
 
