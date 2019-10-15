@@ -26,7 +26,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm --no-git-tag-version version $GITHUB_REF
+        npm --no-git-tag-version version ${GITHUB_REF##*/}
         npm publish --registry=https://npm.pkg.github.com
       env:
         CI: true
