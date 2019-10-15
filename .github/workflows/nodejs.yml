@@ -26,8 +26,11 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
+    - name: publish
+      run: |
         npm --no-git-tag-version version ${GITHUB_REF##*/}
-        npm config set //npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN
+        npm config set registry https://npm.pkg.github.com/
+        npm config set authToken $NODE_AUTH_TOKEN
         npm publish
       env:
         CI: true
