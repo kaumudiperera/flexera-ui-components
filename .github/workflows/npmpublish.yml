@@ -10,6 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+    steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
@@ -27,7 +32,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@kaumudiperera'
       - run: |
-            echo ${github.event}
             echo ${GITHUB_REF}
             npm --no-git-tag-version version ${GITHUB_REF##*/}
             npm publish
