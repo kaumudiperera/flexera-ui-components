@@ -28,6 +28,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@kaumudiperera'
       - run: |
+            echo ${GITHUB_REF}
             npm --no-git-tag-version version ${GITHUB_REF##*/}
             npm publish
         env:
