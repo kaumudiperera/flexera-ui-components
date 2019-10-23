@@ -57,7 +57,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        if: ${GITHUB_CONTEXT.release.target_commitish} == "master"
+        if: $GITHUB_CONTEXT.release.target_commitish == "master"
         run: |
           echo ${GITHUB_REF}
           npm --no-git-tag-version version ${GITHUB_REF##*/}
