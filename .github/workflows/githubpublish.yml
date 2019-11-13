@@ -5,6 +5,7 @@ on:
     types: [published]
 
 jobs:
+  if: github.release.target_commitish === 'master'
   one:
       runs-on: ubuntu-16.04
       steps:
@@ -51,12 +52,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@kaumudiperera'
-      - name: tag
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          GITHUB_CONTEXT: ${{ toJson(github).release.target_commitish }}
-        if: github.release.target_commitish === 'master'
-        run: |
+      - run: |
           echo ${GITHUB_REF}
           npm --no-git-tag-version version ${GITHUB_REF##*/}
           npm publish 
