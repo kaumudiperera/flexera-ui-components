@@ -5,7 +5,7 @@ on:
     types: [published]
 
 jobs:
-  if: github.release.target_commitish === 'master'
+  if: github.release.target_commitish == 'master'
   one:
       runs-on: ubuntu-16.04
       steps:
