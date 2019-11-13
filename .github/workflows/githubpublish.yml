@@ -52,6 +52,8 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@kaumudiperera'
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: |
           echo ${GITHUB_REF}
           npm --no-git-tag-version version ${GITHUB_REF##*/}
