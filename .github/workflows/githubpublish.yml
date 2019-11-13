@@ -42,7 +42,7 @@ jobs:
       - run: npm install
       - run: npm run build
   publish-gpr:
-    if: github.release.target_commitish == 'master'
+    if: github.event.release.target_commitish == 'master'
     needs: build
     runs-on: ubuntu-latest
     steps:
