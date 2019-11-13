@@ -5,7 +5,6 @@ on:
     types: [published]
 
 jobs:
-  if: github.release.target_commitish == 'master'
   one:
       runs-on: ubuntu-16.04
       steps:
@@ -43,6 +42,7 @@ jobs:
       - run: npm install
       - run: npm run build
   publish-gpr:
+    if: github.release.target_commitish == 'master'
     needs: build
     runs-on: ubuntu-latest
     steps:
