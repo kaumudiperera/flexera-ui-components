@@ -941,11 +941,6 @@
   resolved "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.4.tgz#a87b4b04e5ae14a88d48ebef15015f6b7d1f5677"
   integrity sha512-kBa+cDHOR9jpRJ+kcGMsysrls0leukrm68DmFQoMIWQcXdr2cZvyvypWuGYT7U+9kAExUE7+T7r6G3C3A6L8MQ==
 
-"@flexera/ag-grid-react@1.0.4":
-  version "1.0.4"
-  resolved "https://npm.pkg.github.com/download/@flexera/ag-grid-react/1.0.4/1bac0ce38a7838e725f97eb55dbc300774a6f0c899ac9d234948bbf8109e93a2#523aee09efcb7a378ecd7c24a961cda87b72ff88"
-  integrity sha1-UjruCe/LejeOzXwkqWHNqHty/4g=
-
 "@hapi/address@2.x.x":
   version "2.1.2"
   resolved "https://registry.npmjs.org/@hapi/address/-/address-2.1.2.tgz#1c794cd6dbf2354d1eb1ef10e0303f573e1c7222"
@@ -3246,9 +3241,9 @@ decamelize@^2.0.0:
     xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-equal@^1.0.1:
   version "1.1.0"
